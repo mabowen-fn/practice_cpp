@@ -25,3 +25,7 @@ add_compile_options(-O3)
 # Example program
 add_executable(demo examples/demo.cpp)
 target_link_libraries(demo PRIVATE centroid)
+
+# Test Programs
+add_executable(test_centroid tests/test_centroid.cpp)
+target_link_libraries(test_centroid PRIVATE centroid)

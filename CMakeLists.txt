@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(OpenMP)
 if(OpenMP_CXX_FOUND)
   target_link_libraries(centroid PUBLIC OpenMP::OpenMP_CXX)
+  target_compile_definitions(centroid PUBLIC CENTROID_USE_OPENMP=1)
 endif()
 
 # Library target

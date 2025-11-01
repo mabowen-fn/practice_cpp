@@ -1,0 +1,69 @@
+# =============================
+# Build Artifacts
+# =============================
+/build/
+/cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+*.cmake
+*.a
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+
+# =============================
+# Project-specific files
+# =============================
+note.md
+
+# =============================
+# Logs & Debug
+# =============================
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.dSYM/
+*.pch
+
+# =============================
+# IDEs & Editors
+# =============================
+# VSCode
+.vscode/
+# CLion / JetBrains
+.idea/
+# Xcode
+xcuserdata/
+DerivedData/
+# Vim
+*.un~
+# Emacs
+*~
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+__MACOSX/
+
+# =============================
+# Python / Scripts (if added)
+# =============================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# =============================
+# Other
+# =============================
+tags
+.env
+

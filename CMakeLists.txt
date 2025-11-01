@@ -4,6 +4,11 @@ project(CentroidSIMD LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+find_package(OpenMP)
+if(OpenMP_CXX_FOUND)
+  target_link_libraries(centroid PUBLIC OpenMP::OpenMP_CXX)
+endif()
+
 # Library target
 add_library(centroid STATIC
   src/centroid_dispatch.cpp
@@ -26,6 +31,12 @@ add_compile_options(-O3)
 add_executable(demo examples/demo.cpp)
 target_link_libraries(demo PRIVATE centroid)
 
-# Test Programs
+# Tests
+enable_testing()
 add_executable(test_centroid tests/test_centroid.cpp)
 target_link_libraries(test_centroid PRIVATE centroid)
+add_test(NAME CentroidTest COMMAND test_centroid)
+
+# Benchmark
+add_executable(bench_centroid bench/bench_centroid.cpp)
+target_link_libraries(bench_centroid PRIVATE centroid)
